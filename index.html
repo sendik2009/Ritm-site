@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Ритм — трекер привычек и задач. Веб и Android APK." />
+  <meta name="description" content="Ритм — трекер привычек и задач. Веб и Android APK (Android 8.0+)." />
   <meta name="theme-color" content="#EFE6DC" />
   <title>Ритм — темп твоей жизни</title>
   <style>
@@ -18,14 +18,11 @@
       --header-bg: rgba(26, 20, 16, 0.94); --shadow: rgba(0, 0, 0, 0.4);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg); color: var(--text); line-height: 1.55; min-height: 100dvh;
-      transition: background .25s ease, color .25s ease;
     }
     a { color: var(--forest); text-decoration: none; }
-    a:hover { text-decoration: underline; }
     .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
     @media (min-width: 960px) { .wrap { max-width: 1040px; padding: 0 32px 80px; } }
     header {
@@ -43,15 +40,14 @@
     }
     .brand-logo {
       width: 36px; height: 36px; border-radius: 10px; background: var(--forest);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
     }
-    .brand-logo svg { width: 22px; height: 22px; display: block; }
-    .nav-right { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .brand-logo svg { width: 22px; height: 22px; }
     .nav-links a {
       color: var(--muted); font-size: 13px; padding: 8px 12px;
       border-radius: 999px; text-decoration: none !important;
     }
-    .nav-links a:hover { color: var(--text); background: var(--chip); }
+    .nav-right { display: flex; align-items: center; gap: 6px; }
     .theme-toggle {
       width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line);
       background: var(--chip); color: var(--text); cursor: pointer;
@@ -59,7 +55,7 @@
     }
     .hero { padding: 48px 0 36px; text-align: center; }
     @media (min-width: 960px) {
-      .hero { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; text-align: left; padding: 64px 0 48px; }
+      .hero { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; text-align: left; }
       .hero .cta { justify-content: flex-start; }
     }
     .hero-icon {
@@ -67,13 +63,12 @@
       background: var(--forest); display: flex; align-items: center; justify-content: center;
       box-shadow: 0 12px 40px var(--shadow);
     }
-    @media (min-width: 960px) { .hero-icon { width: 120px; height: 120px; border-radius: 28px; margin: 0 auto; } .hero-icon svg { width: 64px; height: 64px; } }
     .hero-icon svg { width: 48px; height: 48px; }
     .hero h1 { font-size: clamp(28px, 6vw, 42px); font-weight: 700; margin-bottom: 10px; }
-    .hero .tag { color: var(--muted); font-size: 17px; margin-bottom: 28px; }
+    .tag { color: var(--muted); font-size: 17px; margin-bottom: 20px; }
     .cta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      display: inline-flex; align-items: center; justify-content: center;
       padding: 14px 22px; border-radius: 16px; font-size: 15px; font-weight: 600;
       border: none; cursor: pointer; text-decoration: none !important;
     }
@@ -81,7 +76,7 @@
     .btn-secondary { background: var(--chip); color: var(--text); border: 1px solid var(--line); }
     .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); }
     .ver-pill {
-      display: inline-block; margin-top: 16px; font-size: 12px; color: var(--muted);
+      display: inline-block; margin-top: 14px; font-size: 12px; color: var(--muted);
       background: var(--chip); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line);
     }
     section { margin-top: 40px; }
@@ -91,7 +86,6 @@
     .card p + p { margin-top: 10px; }
     .features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     @media (min-width: 960px) { .features { grid-template-columns: 1fr 1fr 1fr 1fr; } }
-    @media (max-width: 520px) { .features { grid-template-columns: 1fr; } }
     .feat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
     .feat strong { display: block; font-size: 14px; margin-bottom: 4px; color: var(--text); }
     .feat span { font-size: 13px; color: var(--muted); }
@@ -109,7 +103,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 13px; font-weight: 700; border: 1px solid var(--line);
     }
-    .steps li b { color: var(--text); font-weight: 600; }
+    .steps li b { color: var(--text); }
     footer {
       margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
       text-align: center; font-size: 12px; color: var(--muted);
@@ -124,16 +118,18 @@
       font-size: 10px; font-weight: 700; background: var(--forest); color: var(--on-forest);
       padding: 2px 8px; border-radius: 999px; margin-left: 8px;
     }
-    @media (min-width: 960px) {
-      .pc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .req {
+      display: inline-block; margin-top: 10px; font-size: 13px; color: var(--muted);
+      background: var(--chip); padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line);
     }
+    @media (min-width: 960px) { .pc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; } }
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
       <a class="brand" href="#home" data-nav="home">
-        <span class="brand-logo" aria-hidden="true">
+        <span class="brand-logo">
           <svg viewBox="0 0 24 24" fill="none" style="color:var(--on-forest)">
             <path d="M2 12h4l2-6 3 14 2-8h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -171,6 +167,7 @@
             <a class="btn btn-ghost" href="#versions" data-nav="versions">Версии</a>
           </div>
           <div class="ver-pill" id="ver-pill">Загрузка…</div>
+          <div class="req">APK: Android 8.0+ (API 26)</div>
         </div>
       </div>
       <section>
@@ -198,10 +195,10 @@
           <h2>Установка APK</h2>
           <div class="card">
             <ol class="steps">
+              <li><b>Нужен Android 8.0</b> или новее</li>
               <li><b>Скачай</b> APK</li>
               <li><b>Разреши</b> установку из источника</li>
-              <li><b>Установи</b> ritm.apk</li>
-              <li>Обновления — в настройках приложения</li>
+              <li><b>Установи</b> и при обновлении — поверх</li>
             </ol>
           </div>
         </section>
@@ -217,9 +214,9 @@
       </div>
     </div>
     <div id="page-versions" class="page">
-      <div class="hero" style="display:block;text-align:center;padding-bottom:20px">
+      <div class="hero" style="display:block;text-align:center">
         <h1 style="font-size:28px">Версии</h1>
-        <p class="tag">Патчноут</p>
+        <p class="tag">Патчноут · APK с Android 8.0+</p>
         <div class="cta" style="justify-content:center">
           <a class="btn btn-secondary" href="#home" data-nav="home">На главную</a>
           <a class="btn btn-primary" href="https://cdn.jsdelivr.net/gh/sendik2009/Ritm@main/ritm.apk">Скачать APK</a>
@@ -227,10 +224,11 @@
       </div>
       <section><div class="card" id="changelog-list">Загрузка…</div></section>
     </div>
-    <footer>Ритм · <a href="https://github.com/sendik2009/Ritm-site" target="_blank" rel="noopener">Ritm-site</a></footer>
+    <footer>Ритм · Android 8.0+ · <a href="https://github.com/sendik2009/Ritm-site" target="_blank" rel="noopener">Ritm-site</a></footer>
   </div>
   <script>
     var CHANGELOG = [
+      { version: "Ritm v7.4.2", versionCode: 88, changelog: "• Столбики за месяц (30 дней) с горизонтальной прокруткой\n• Фикс вылезания столбцов за край\n• Улучшение смены иконки (Samsung)\n• APK: Android 8.0+" },
       { version: "Ritm v7.4.1", versionCode: 87, changelog: "• Зеркала обновлений: Vercel → jsDelivr → GitHub" },
       { version: "Ritm v7.4", versionCode: 86, changelog: "• Столбики в своей статистике и по привычкам\n• Иконка под тему" },
       { version: "Ritm v7.3.1", versionCode: 85, changelog: "• Фикс столбиков" },
@@ -270,7 +268,6 @@
       document.querySelectorAll(".page").forEach(function (p) {
         p.classList.toggle("active", p.id === "page-" + name);
       });
-      if (name === "versions") window.scrollTo(0, 0);
       try { history.replaceState(null, "", "#" + name); } catch (e) {}
     }
     document.querySelectorAll("[data-nav]").forEach(function (a) {
@@ -278,7 +275,7 @@
     });
     showPage((location.hash || "#home").replace("#", "") === "versions" ? "versions" : "home");
     function esc(s) {
-      return String(s || "").replace(/&/g,"&").replace(/</g,"<").replace(/>/g,">");
+      return String(s || "").replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">");
     }
     function renderChangelog(list) {
       var el = document.getElementById("changelog-list");
